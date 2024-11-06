@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bivg10rw3nneu"]
+
+[ext_resource type="Texture2D" uid="uid://bgrugaomufrb6" path="res://Art/Inventory art/inventory-slot.png" id="1_0p5sw"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(636, 330)
+scale = Vector2(33.5, 29.875)
+texture = ExtResource("1_0p5sw")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -7.04478
+offset_top = -7.06276
+offset_right = 270.955
+offset_bottom = 271.937
+scale = Vector2(0.05, 0.05)
+horizontal_alignment = 1
+autowrap_mode = 3

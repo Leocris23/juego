@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://g58cvso824pv"]
+
+[ext_resource type="Script" path="res://Escenas/Item.gd" id="1_fhv3t"]
+[ext_resource type="Texture2D" uid="uid://ddllfmta0nuqh" path="res://Art/e.png" id="2_f0t5y"]
+[ext_resource type="Texture2D" uid="uid://c4v6dn0d06hxl" path="res://Art/Item/tabla con el ojo de oziris.png" id="2_xwpsf"]
+[ext_resource type="PackedScene" uid="uid://bivg10rw3nneu" path="res://Escenas/CAtel.tscn" id="3_o6arb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akokf"]
+size = Vector2(67, 69)
+
+[node name="Ojo de Horus" type="Area2D"]
+script = ExtResource("1_fhv3t")
+nombre = "Tabla del ojo de horus"
+descripcion = "El Ojo de Horus o Udyat es un antiguo símbolo solar egipcio que encarna el orden, lo imperturbado y el estado perfecto. Se le asignan características apotropaicas, es decir, mágicas, protectoras, purificadoras y sanadoras."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.375, 0.4375)
+texture = ExtResource("2_xwpsf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 9)
+shape = SubResource("RectangleShape2D_akokf")
+
+[node name="E1" type="Sprite2D" parent="."]
+position = Vector2(-3, -47)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f0t5y")
+
+[node name="Sprite2D2" parent="." instance=ExtResource("3_o6arb")]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-4, -1)

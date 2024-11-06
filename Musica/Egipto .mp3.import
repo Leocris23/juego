@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cucpex22nkgp4"
+path="res://.godot/imported/Egipto .mp3-9782e241b720fd839817159045d1cd6f.mp3str"
+
+[deps]
+
+source_file="res://Musica/Egipto .mp3"
+dest_files=["res://.godot/imported/Egipto .mp3-9782e241b720fd839817159045d1cd6f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,212 @@
+[gd_scene load_steps=25 format=3 uid="uid://7qm2ixgq62xi"]
+
+[ext_resource type="PackedScene" uid="uid://wiq1mkp6jq41" path="res://Escenas/Mapa.tscn" id="1_8x524"]
+[ext_resource type="Script" path="res://Escenas/principal.gd" id="1_u44cd"]
+[ext_resource type="PackedScene" uid="uid://cjr2t7ntxattb" path="res://Escenas/player.tscn" id="2_8yqhe"]
+[ext_resource type="PackedScene" uid="uid://buolmhaxw78mm" path="res://Escenas/Sistema_dia.tscn" id="3_5t42y"]
+[ext_resource type="Texture2D" uid="uid://ddllfmta0nuqh" path="res://Art/e.png" id="4_nejew"]
+[ext_resource type="PackedScene" uid="uid://bjlggoajvueiv" path="res://Escenas/perder_desamayo.tscn" id="9_s0q4y"]
+[ext_resource type="PackedScene" uid="uid://dlrjw0pdqyyhp" path="res://Inventario/Items/item_2.tscn" id="9_vb060"]
+[ext_resource type="PackedScene" uid="uid://bip63jl0wtyl3" path="res://Escenas/cartel_ganar_perder.tscn" id="10_1sipi"]
+[ext_resource type="PackedScene" uid="uid://b2aieryku1o54" path="res://Escenas/pausa.tscn" id="10_54nna"]
+[ext_resource type="PackedScene" uid="uid://jgbb88jdacik" path="res://Escenas/item.tscn" id="13_c7s1t"]
+[ext_resource type="PackedScene" uid="uid://dcrabuluy2abg" path="res://Inventario/Items/item3.tscn" id="14_y0drc"]
+[ext_resource type="PackedScene" uid="uid://b17fnpptx3abi" path="res://Inventario/Items/momia_gatuna.tscn" id="15_1edb3"]
+[ext_resource type="PackedScene" uid="uid://dtt6nlghc2s50" path="res://Escenas/viejo.tscn" id="17_coko6"]
+[ext_resource type="AudioStream" uid="uid://cucpex22nkgp4" path="res://Musica/Egipto .mp3" id="18_10d8h"]
+[ext_resource type="PackedScene" uid="uid://c5bl2t6idmxii" path="res://Escenas/charla_viejo.tscn" id="18_73ob4"]
+[ext_resource type="PackedScene" uid="uid://djhcpf4hdpgj8" path="res://Escenas/momia.tscn" id="19_p814o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0tg3"]
+size = Vector2(91, 49.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umpsv"]
+size = Vector2(66, 67)
+
+[sub_resource type="Animation" id="Animation_8t7u4"]
+resource_name = "Oscuridad"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oscuridad/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 2.5, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0.190762, 0.190762, 0.190762, 1), Color(0, 0, 0, 1), Color(0.190762, 0.190762, 0.190762, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u57eo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("oscuridad/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khbx0"]
+_data = {
+"Oscuridad": SubResource("Animation_8t7u4"),
+"RESET": SubResource("Animation_u57eo")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g45s2"]
+size = Vector2(155, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htakn"]
+size = Vector2(146, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqbfu"]
+size = Vector2(147.5, 42.5)
+
+[node name="Principal" type="Node2D"]
+position = Vector2(-485, -99)
+script = ExtResource("1_u44cd")
+
+[node name="Mapa" parent="." instance=ExtResource("1_8x524")]
+position = Vector2(488, 106)
+
+[node name="Dormir2" type="Area2D" parent="."]
+
+[node name="Dormir" type="CollisionShape2D" parent="Dormir2"]
+position = Vector2(1024, 277)
+shape = SubResource("RectangleShape2D_h0tg3")
+
+[node name="Sistemas_dia" parent="." instance=ExtResource("3_5t42y")]
+position = Vector2(485, 105)
+
+[node name="E1" type="Sprite2D" parent="."]
+position = Vector2(1020, 159)
+scale = Vector2(0.366098, 0.366098)
+texture = ExtResource("4_nejew")
+
+[node name="Momia2" parent="." instance=ExtResource("19_p814o")]
+position = Vector2(-14358, 13538)
+
+[node name="Momia5" parent="." instance=ExtResource("19_p814o")]
+position = Vector2(-11127, 13295)
+
+[node name="Momia4" parent="." instance=ExtResource("19_p814o")]
+position = Vector2(-12185, 13583)
+
+[node name="Momia3" parent="." instance=ExtResource("19_p814o")]
+position = Vector2(-13849, 12067)
+
+[node name="Momia" parent="." instance=ExtResource("19_p814o")]
+position = Vector2(-12633, 12655)
+
+[node name="player" parent="." instance=ExtResource("2_8yqhe")]
+position = Vector2(1116, 447)
+metadata/_edit_group_ = true
+
+[node name="Pausa" parent="player" instance=ExtResource("10_54nna")]
+position = Vector2(2, -5)
+
+[node name="Perder_desamayo2" parent="player" instance=ExtResource("9_s0q4y")]
+visible = false
+position = Vector2(16, 73)
+
+[node name="Node2D" parent="player" instance=ExtResource("10_1sipi")]
+position = Vector2(-16, 38)
+
+[node name="Cofre" type="Area2D" parent="."]
+position = Vector2(875, 254)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre"]
+position = Vector2(6, 21)
+shape = SubResource("RectangleShape2D_umpsv")
+
+[node name="Item2" parent="." instance=ExtResource("9_vb060")]
+position = Vector2(-10901, 13135)
+
+[node name="Amesh" parent="." instance=ExtResource("13_c7s1t")]
+position = Vector2(-14007, 11847)
+
+[node name="escultura" parent="." instance=ExtResource("14_y0drc")]
+position = Vector2(-14527, 13692)
+
+[node name="Momia_gatuna" parent="." instance=ExtResource("15_1edb3")]
+position = Vector2(-12339, 12657)
+
+[node name="Viejo" parent="." instance=ExtResource("17_coko6")]
+position = Vector2(1186, 437)
+
+[node name="CanvasLayer" parent="Viejo" instance=ExtResource("18_73ob4")]
+visible = false
+
+[node name="E3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1182, 367)
+scale = Vector2(0.355744, 0.365566)
+texture = ExtResource("4_nejew")
+
+[node name="E2" type="Sprite2D" parent="."]
+position = Vector2(880, 216)
+scale = Vector2(0.282813, 0.307102)
+texture = ExtResource("4_nejew")
+
+[node name="oscuridad" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_khbx0")
+}
+
+[node name="ColorRect" type="ColorRect" parent="oscuridad"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+offset_left = -158.0
+offset_top = -280.0
+offset_right = 1679.0
+offset_bottom = 989.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_10d8h")
+volume_db = -15.678
+autoplay = true
+
+[node name="EntradaTumba" type="Area2D" parent="."]
+position = Vector2(1725, 856)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntradaTumba"]
+position = Vector2(9, -2)
+shape = SubResource("RectangleShape2D_g45s2")
+
+[node name="Escalera al segundo piso" type="Area2D" parent="."]
+position = Vector2(-10982, 13912)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escalera al segundo piso"]
+position = Vector2(-11, 20.5)
+shape = SubResource("RectangleShape2D_htakn")
+
+[node name="SalidaTumba" type="Area2D" parent="."]
+position = Vector2(-14405, 12506)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SalidaTumba"]
+position = Vector2(-10.75, -7.25)
+shape = SubResource("RectangleShape2D_tqbfu")
+
+[connection signal="body_entered" from="Dormir2" to="." method="_on_dormir_2_body_entered"]
+[connection signal="body_exited" from="Dormir2" to="." method="_on_dormir_2_body_exited"]
+[connection signal="body_entered" from="Cofre" to="." method="_on_cofre_body_entered"]
+[connection signal="body_exited" from="Cofre" to="." method="_on_cofre_body_exited"]
+[connection signal="body_entered" from="Item2" to="." method="_on_item_2_body_entered"]
+[connection signal="body_exited" from="Item2" to="." method="_on_item_2_body_exited"]
+[connection signal="body_entered" from="Viejo" to="." method="_on_viejo_body_entered"]
+[connection signal="body_exited" from="Viejo" to="." method="_on_viejo_body_exited"]
+[connection signal="body_entered" from="EntradaTumba" to="player" method="_on_entrada_tumba_body_entered"]
+[connection signal="body_entered" from="Escalera al segundo piso" to="player" method="_on_escalera_al_segundo_piso_body_entered"]
+[connection signal="body_exited" from="Escalera al segundo piso" to="player" method="_on_escalera_al_segundo_piso_body_exited"]
+[connection signal="body_entered" from="SalidaTumba" to="player" method="_on_salida_tumba_body_entered"]
+
+[editable path="player"]

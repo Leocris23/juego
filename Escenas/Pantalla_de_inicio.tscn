@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmdby8roa4bfp"]
+
+[ext_resource type="Script" path="res://Escenas/Pantalla_de_inicio.gd" id="1_8p1if"]
+[ext_resource type="Texture2D" uid="uid://vduvxx2wfykq" path="res://Art/Pantalla de inicio/ImagendeInicio.png" id="2_h5pfc"]
+[ext_resource type="Texture2D" uid="uid://cfveg7g7tpnrv" path="res://Art/Pantalla de inicio/Boton_Nueva_Partida.png" id="3_52287"]
+[ext_resource type="Texture2D" uid="uid://pm0g0krmk55" path="res://Art/Pantalla de inicio/Boton_Opciones.png" id="4_kejn7"]
+[ext_resource type="Texture2D" uid="uid://26jq0e4rp45d" path="res://Art/Pantalla de inicio/Boton_Salir.png" id="5_gkrmw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57r6t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grx2k"]
+draw_center = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbpst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewx5t"]
+draw_center = false
+
+[node name="Pantalla_de_Inicio" type="PanelContainer"]
+process_mode = 3
+offset_right = 1960.0
+offset_bottom = 1102.0
+scale = Vector2(0.65, 0.65)
+theme_override_styles/panel = SubResource("StyleBoxFlat_57r6t")
+script = ExtResource("1_8p1if")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(982.538, 555.115)
+scale = Vector2(1.53209, 1.53921)
+texture = ExtResource("2_h5pfc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Inicio_Partida" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_grx2k")
+icon = ExtResource("3_52287")
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pbpst")
+icon = ExtResource("4_kejn7")
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ewx5t")
+icon = ExtResource("5_gkrmw")
+
+[connection signal="pressed" from="VBoxContainer/Inicio_Partida" to="." method="_on_inicio_partida_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

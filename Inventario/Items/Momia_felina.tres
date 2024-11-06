@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dyrsogkyg6wut"]
+
+[ext_resource type="Script" path="res://Inventario/Inventory_Items.gd" id="1_nsmu6"]
+[ext_resource type="Texture2D" uid="uid://it0yfbwkfjj0" path="res://Art/Item/momia gato item.png" id="2_2k03u"]
+
+[resource]
+script = ExtResource("1_nsmu6")
+name = "Momia Felina"
+texture = ExtResource("2_2k03u")

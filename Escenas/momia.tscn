@@ -1,0 +1,111 @@
+[gd_scene load_steps=18 format=3 uid="uid://djhcpf4hdpgj8"]
+
+[ext_resource type="Script" path="res://Momia.gd" id="1_hcl0m"]
+[ext_resource type="Texture2D" uid="uid://b83tvpjxcdwom" path="res://Animaciones/Momia/momia momia atras 1 .png" id="2_xjiew"]
+[ext_resource type="Texture2D" uid="uid://dsffs420tw6pf" path="res://Animaciones/Momia/momia momia atras 2 .png" id="3_lserg"]
+[ext_resource type="Texture2D" uid="uid://ciyaf37trod5o" path="res://Animaciones/Momia/momia momia atras 3 .png" id="4_vebj6"]
+[ext_resource type="Texture2D" uid="uid://dcmtp2vufvk4k" path="res://Animaciones/Momia/momia derecha 1.png" id="5_80clh"]
+[ext_resource type="Texture2D" uid="uid://db7gtu8sve32c" path="res://Animaciones/Momia/momia derecha 2 .png" id="6_wyoib"]
+[ext_resource type="Texture2D" uid="uid://b70k8gxn0d75q" path="res://Animaciones/Momia/momia derecha 3 .png" id="7_2xpdi"]
+[ext_resource type="Texture2D" uid="uid://tbu2qqikfbla" path="res://Animaciones/Momia/momia momia frente 1 .png" id="8_ht4qk"]
+[ext_resource type="Texture2D" uid="uid://wvxietylqehc" path="res://Animaciones/Momia/momia momia frente 2 .png" id="9_perpo"]
+[ext_resource type="Texture2D" uid="uid://dlmu5pkte6cxm" path="res://Animaciones/Momia/momia momia frente 3 .png" id="10_fah44"]
+[ext_resource type="Texture2D" uid="uid://cd5lafr8rm5jb" path="res://Animaciones/Momia/momia Izq 1.png" id="11_6bnm2"]
+[ext_resource type="Texture2D" uid="uid://jlprfuvhvjqs" path="res://Animaciones/Momia/momia Izq 2.png" id="12_8l81g"]
+[ext_resource type="Texture2D" uid="uid://dqqak4mrct6xd" path="res://Animaciones/Momia/momia Izq 3.png" id="13_7vs36"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqw5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xjiew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lserg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vebj6")
+}],
+"loop": true,
+"name": &"momiaAtr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_80clh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wyoib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2xpdi")
+}],
+"loop": true,
+"name": &"momiaDer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ht4qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_perpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fah44")
+}],
+"loop": true,
+"name": &"momiaFre",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6bnm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8l81g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7vs36")
+}],
+"loop": true,
+"name": &"momiaIzq",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ir52"]
+radius = 18.0
+height = 58.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fhwf6"]
+radius = 166.481
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_poq0c"]
+radius = 27.0
+height = 74.0
+
+[node name="Momia" type="CharacterBody2D"]
+script = ExtResource("1_hcl0m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.999999, -1)
+scale = Vector2(2.40625, 2.14063)
+sprite_frames = SubResource("SpriteFrames_vqw5t")
+animation = &"momiaAtr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7ir52")
+
+[node name="vista" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vista"]
+shape = SubResource("CircleShape2D_fhwf6")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_poq0c")
+
+[connection signal="body_entered" from="vista" to="." method="_on_vista_body_entered"]
+[connection signal="body_exited" from="vista" to="." method="_on_vista_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

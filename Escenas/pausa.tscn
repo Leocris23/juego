@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2aieryku1o54"]
+
+[ext_resource type="Script" path="res://Escenas/Pausa_.gd" id="1_nd840"]
+[ext_resource type="Texture2D" uid="uid://6ateo0qgdfff" path="res://Art/Pantalla de inicio/PAUSA.png" id="2_gw13s"]
+[ext_resource type="Texture2D" uid="uid://chbngiykwt11j" path="res://Art/Pantalla de inicio/Sin título-1.png" id="3_q74rf"]
+[ext_resource type="Texture2D" uid="uid://26jq0e4rp45d" path="res://Art/Pantalla de inicio/Boton_Salir.png" id="4_4cov1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmnqi"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfotn"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0627451)
+
+[node name="Pausa" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_nd840")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -235.0
+offset_top = -134.0
+offset_right = 1457.0
+offset_bottom = 838.0
+color = Color(0.352941, 0.352941, 0.352941, 0.556863)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(621, 127)
+texture = ExtResource("2_gw13s")
+region_enabled = true
+region_rect = Rect2(394, 251, 366, 133)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 625.0
+offset_top = 348.0
+offset_right = 950.0
+offset_bottom = 463.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fmnqi")
+icon = ExtResource("3_q74rf")
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 423.0
+offset_top = 348.0
+offset_right = 796.0
+offset_bottom = 464.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfotn")
+icon = ExtResource("4_4cov1")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

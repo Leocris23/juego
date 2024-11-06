@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://jgbb88jdacik"]
+
+[ext_resource type="Script" path="res://Escenas/Item.gd" id="1_2f5i4"]
+[ext_resource type="Texture2D" uid="uid://d277sv23rs4vv" path="res://Art/Item/baculo egipcio.png" id="2_efawj"]
+[ext_resource type="PackedScene" uid="uid://bivg10rw3nneu" path="res://Escenas/CAtel.tscn" id="3_d0xao"]
+[ext_resource type="Texture2D" uid="uid://ddllfmta0nuqh" path="res://Art/e.png" id="4_unlhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3co8n"]
+size = Vector2(67, 69)
+
+[node name="Amesh" type="Area2D"]
+script = ExtResource("1_2f5i4")
+nombre = "Amesh"
+descripcion = " Ames o amesh es un cetro en forma de bastón o maza utilizado como insignia real en el Antiguo Egipto. El ames era un símbolo de poder soberano, al mismo tiempo que estaba dotado de poderes divinos.  Se utilizaba especialmente en los cultos funerarios."
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.75, -2.75)
+scale = Vector2(0.710938, 0.679688)
+texture = ExtResource("2_efawj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3co8n")
+
+[node name="E1" type="Sprite2D" parent="."]
+position = Vector2(-3, -47)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_unlhn")
+
+[node name="Sprite2D2" parent="." instance=ExtResource("3_d0xao")]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-4, -1)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://l4edxus82jv0"]
+
+[ext_resource type="Script" path="res://Escenas/Tierra_escabable.gd" id="1_tndd0"]
+[ext_resource type="Texture2D" uid="uid://dpmwd42s7whg2" path="res://Tileset/Grupo 1/Outside_A2.png" id="2_qlx48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jknt"]
+size = Vector2(94, 99)
+
+[node name="Tierra_escabable" type="Area2D"]
+script = ExtResource("1_tndd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(49, 51.5)
+shape = SubResource("RectangleShape2D_7jknt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50, 51)
+scale = Vector2(1, 0.710145)
+texture = ExtResource("2_qlx48")
+region_enabled = true
+region_rect = Rect2(0, 291, 95, 138)

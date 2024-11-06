@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0cry3k43tqe4"]
+
+[ext_resource type="Texture2D" uid="uid://it0yfbwkfjj0" path="res://Art/Item/momia gato item.png" id="2_qnym0"]
+
+[sub_resource type="GDScript" id="GDScript_xngml"]
+script/source = "extends CharacterBody2D
+
+
+class_name Item
+
+@export var nombre : String
+@export var descripcion : String
+
+@onready var textura : Sprite2D = $Sprite2D
+"
+
+[node name="Item" type="Node"]
+script = SubResource("GDScript_xngml")
+nombre = "Momia Gatuna"
+descripcion = "eee"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qnym0")

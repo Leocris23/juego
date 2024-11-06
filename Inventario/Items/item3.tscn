@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcrabuluy2abg"]
+
+[ext_resource type="Script" path="res://Escenas/Item.gd" id="1_2mfef"]
+[ext_resource type="Texture2D" uid="uid://cbh21tib8oy0j" path="res://Art/Item/Horus.png" id="2_h42kp"]
+[ext_resource type="Texture2D" uid="uid://ddllfmta0nuqh" path="res://Art/e.png" id="3_2ae6q"]
+[ext_resource type="PackedScene" uid="uid://bivg10rw3nneu" path="res://Escenas/CAtel.tscn" id="4_8rjxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c4jr"]
+size = Vector2(67, 69)
+
+[node name="Horus" type="Area2D"]
+script = ExtResource("1_2mfef")
+nombre = "Escultura de Horus"
+descripcion = "Horus es una de las más importantes deidades del antiguo Egipto, que desempeñaba numerosas funciones, de manera más notable como dios de la realeza y del cielo en la mitología egipcia, así como de la guerra y de la caza.​ Fue venerado al menos desde el Egipto prehistórico tardío hasta el Reino Ptolemaico y el Egipto romano. "
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 7)
+scale = Vector2(0.84375, 0.921875)
+texture = ExtResource("2_h42kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 9)
+shape = SubResource("RectangleShape2D_8c4jr")
+
+[node name="E1" type="Sprite2D" parent="."]
+position = Vector2(-3, -47)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_2ae6q")
+
+[node name="Sprite2D2" parent="." instance=ExtResource("4_8rjxb")]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-4, -1)

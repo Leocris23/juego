@@ -1,0 +1,168 @@
+[gd_scene load_steps=30 format=3 uid="uid://cjr2t7ntxattb"]
+
+[ext_resource type="Script" path="res://Escenas/Player.gd" id="1_5dad3"]
+[ext_resource type="Texture2D" uid="uid://c3f7lenb6v2r4" path="res://Animaciones/Sprite-Pj-frente.png" id="2_kgips"]
+[ext_resource type="Texture2D" uid="uid://di7yk6ptxjx42" path="res://Animaciones/Sprite-Pj-frente2.png" id="3_e7e78"]
+[ext_resource type="Texture2D" uid="uid://oge3qcfvs2wf" path="res://Animaciones/Sprite-Pj-frente3.png" id="4_5ujai"]
+[ext_resource type="Texture2D" uid="uid://cdugb2kg6mck4" path="res://Animaciones/Sprite-Pj-frente4.png" id="5_2nm0h"]
+[ext_resource type="Texture2D" uid="uid://ctesmjonjucpb" path="res://Animaciones/Atras caminando/Sprite-Modelo-base-atras.png" id="6_iq6ns"]
+[ext_resource type="Texture2D" uid="uid://b3o2k4vfspk5f" path="res://Animaciones/frente caminar/Sprite-Pj-frente-caminando.png" id="6_yrhav"]
+[ext_resource type="Texture2D" uid="uid://bi3j6m1d4ajrh" path="res://Animaciones/Atras caminando/Sprite-Modelo-base-atras2.png" id="7_p2qyk"]
+[ext_resource type="Texture2D" uid="uid://oc1ta0ckabwa" path="res://Animaciones/frente caminar/Sprite-Pj-frente-caminando2.png" id="7_rd3hh"]
+[ext_resource type="Texture2D" uid="uid://ca3obrgqmy836" path="res://Animaciones/Atras caminando/Sprite-Modelo-base-atras3.png" id="8_t0yyq"]
+[ext_resource type="Texture2D" uid="uid://3d2ybf6r3e4w" path="res://Animaciones/frente caminar/Sprite-Pj-frente-caminando3.png" id="8_u7qi3"]
+[ext_resource type="Texture2D" uid="uid://bndorxkxm4ve1" path="res://Animaciones/frente caminar/Sprite-Pj-frente-caminando4.png" id="9_ct6rr"]
+[ext_resource type="Texture2D" uid="uid://wkx3x0ssjk0o" path="res://Animaciones/Atras caminando/Sprite-Modelo-base-atras4.png" id="9_xqsth"]
+[ext_resource type="Texture2D" uid="uid://ckf3hgi6nrhyg" path="res://Animaciones/derecha caminar/Sprite-Pj-derecho-caminando.png" id="10_d4tkd"]
+[ext_resource type="Texture2D" uid="uid://dnprx0atgk4od" path="res://Animaciones/izquierda caminar/Sprite-Pj-izquierda-caminando.png" id="10_fud3x"]
+[ext_resource type="Texture2D" uid="uid://by3thr8u270ln" path="res://Animaciones/izquierda caminar/Sprite-Pj-izquierda-caminando2.png" id="11_ajjmx"]
+[ext_resource type="Texture2D" uid="uid://cks4wjtushaxp" path="res://Animaciones/derecha caminar/Sprite-Pj-derecho-caminando2.png" id="11_vjtxf"]
+[ext_resource type="Texture2D" uid="uid://be2f4sipvvsre" path="res://Animaciones/izquierda caminar/Sprite-Pj-izquierda-caminando3.png" id="12_mhjex"]
+[ext_resource type="Texture2D" uid="uid://iy02daeo0scq" path="res://Animaciones/derecha caminar/Sprite-Pj-derecho-caminando3.png" id="12_taf3f"]
+[ext_resource type="Texture2D" uid="uid://detewgcd4btwm" path="res://Animaciones/izquierda caminar/Sprite-Pj-izquierda-caminando4.png" id="13_gj6eg"]
+[ext_resource type="Texture2D" uid="uid://bj0qclft12dvh" path="res://Animaciones/derecha caminar/Sprite-Pj-derecho-caminando4.png" id="13_t0yti"]
+[ext_resource type="Script" path="res://Escenas/Inventario.gd" id="22_jp03e"]
+[ext_resource type="PackedScene" uid="uid://u36iumuvb67a" path="res://Escenas/item_display.tscn" id="23_pdbo5"]
+[ext_resource type="PackedScene" uid="uid://chi784jgetmhp" path="res://Escenas/cartel_piso_bloqueado.tscn" id="26_cdnka"]
+[ext_resource type="PackedScene" uid="uid://dkvbadbkd0vqi" path="res://Escenas/barra_e.tscn" id="26_ttfcc"]
+[ext_resource type="PackedScene" uid="uid://bjlggoajvueiv" path="res://Escenas/perder_desamayo.tscn" id="27_7y0f2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4ltd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kgips")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e7e78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ujai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2nm0h")
+}],
+"loop": true,
+"name": &"Reposo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_iq6ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p2qyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t0yyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xqsth")
+}],
+"loop": true,
+"name": &"atras caminando",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yrhav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rd3hh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u7qi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ct6rr")
+}],
+"loop": true,
+"name": &"caminado hacia el frente",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fud3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ajjmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mhjex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gj6eg")
+}],
+"loop": true,
+"name": &"caminado izquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_d4tkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vjtxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_taf3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t0yti")
+}],
+"loop": true,
+"name": &"derecha caminar",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k0bgp"]
+radius = 20.0
+height = 78.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d1i8w"]
+radius = 46.0
+height = 106.0
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_5dad3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.38419e-07, -7)
+scale = Vector2(3, 3.046)
+sprite_frames = SubResource("SpriteFrames_j4ltd")
+animation = &"Reposo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_k0bgp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -3)
+ignore_rotation = false
+
+[node name="Inventario" type="Node" parent="."]
+script = ExtResource("22_jp03e")
+
+[node name="item_display" parent="." node_paths=PackedStringArray("Inv") instance=ExtResource("23_pdbo5")]
+offset_left = -441.0
+offset_top = 246.0
+offset_right = 455.0
+offset_bottom = 314.0
+Inv = NodePath("../Inventario")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, -17)
+shape = SubResource("CapsuleShape2D_d1i8w")
+
+[node name="Barra_e" parent="." instance=ExtResource("26_ttfcc")]
+
+[node name="Perder_desamayo" parent="." instance=ExtResource("27_7y0f2")]
+position = Vector2(-617, -298)
+
+[node name="CartelPisoBloqueado" parent="." instance=ExtResource("26_cdnka")]
+position = Vector2(-679, -353)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

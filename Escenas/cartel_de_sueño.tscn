@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bremg4i36f10g"]
+
+[ext_resource type="Texture2D" uid="uid://bgrugaomufrb6" path="res://Art/Inventory art/inventory-slot.png" id="1_wjnce"]
+
+[node name="Cartel_de_Sueño" type="Sprite2D"]
+position = Vector2(632, 638)
+scale = Vector2(42.375, 5.8125)
+texture = ExtResource("1_wjnce")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 2
+texture_repeat = 3
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 132.0
+offset_bottom = 144.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/font_size = 14
+text = "Estoy cansado ,deberia ir a dormir ."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
